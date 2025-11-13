@@ -308,17 +308,17 @@ export default function Home() {
       <div className="section-divider"></div>
 
       {/* Contact */}
-      <section id="contact" className="py-20 md:py-32 bg-gradient-to-br from-primary to-primary/80">
+      <section id="contact" className="py-20 md:py-32 bg-gradient-to-br from-primary to-primary">
         <div className="container text-center">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-white">
+          <h2 className="font-playfair text-4xl md:text-5xl font-bold mb-6 text-primary-foreground">
             Parlons de votre projet
           </h2>
-          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
             Je suis disponible pour discuter de vos besoins en marketing digital et communication stratégique.
           </p>
           <div className="flex flex-col md:flex-row gap-4 justify-center">
             {/* Open Gmail compose with pre-filled fields */}
-            <Button asChild className="bg-white text-primary hover:bg-white/90">
+            <Button asChild className="bg-card text-primary hover:bg-card/90">
               <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=zfati598@gmail.com&su=Contact%20depuis%20le%20portfolio&body=Bonjour%20Fatima%20Zahra%2C%0A%0AJe%20vous%20contacte%20%C3%A0%20propos%20de%20..."
                 target="_blank"
@@ -331,7 +331,7 @@ export default function Home() {
             </Button>
 
             {/* Open WhatsApp chat */}
-            <Button asChild variant="outline" className="border-white text-white hover:bg-white/10">
+            <Button asChild variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground/10">
               <a
                 href="https://wa.me/212657501386?text=Bonjour%20Fatima%20Zahra%2C%20je%20souhaite%20discuter%20de%20votre%20portfolio."
                 target="_blank"
@@ -350,7 +350,7 @@ export default function Home() {
       <footer className="bg-foreground text-background py-8">
         <div className="container text-center">
           <p className="mb-2">© 2025 Fatima Zahra Lakrafi. Tous droits réservés.</p>
-          <p className="text-sm text-white/70">
+          <p className="text-sm text-background/80">
             Spécialiste en Marketing Digital & Communication Stratégique
           </p>
         </div>
