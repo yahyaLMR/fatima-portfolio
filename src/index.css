@@ -128,7 +128,7 @@
     font-family: 'Playfair Display', serif;
     font-weight: 600;
     letter-spacing: -0.5px;
-    color: oklch(0.3 0.01 65);
+    @apply text-foreground;
   }
   
   h1 {
@@ -164,19 +164,19 @@
   
   /* Styles personnalisés pour le portfolio */
   .section-divider {
-    @apply h-1 bg-gradient-to-r from-transparent via-[oklch(0.88_0.15_350)] to-transparent my-12;
+    @apply h-1 bg-gradient-to-r from-transparent via-primary to-transparent my-12;
   }
   
   .skill-badge {
-    @apply inline-block px-4 py-2 rounded-full bg-[oklch(0.95_0.06_350)] text-[oklch(0.3_0.01_65)] font-medium text-sm;
+    @apply inline-block px-4 py-2 rounded-full bg-muted text-foreground font-medium text-sm;
   }
   
   .project-card {
-    @apply bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 border border-[oklch(0.92_0.06_350)];
+    @apply bg-card text-card-foreground rounded-lg shadow-md hover:shadow-lg transition-shadow p-6 border;
   }
   
   .photo-placeholder {
-    @apply bg-[oklch(0.95_0.06_350)] rounded-lg flex items-center justify-center text-[oklch(0.7_0.01_65)] font-medium aspect-square;
+    @apply bg-muted rounded-lg flex items-center justify-center text-muted-foreground font-medium aspect-square;
   }
 }
 

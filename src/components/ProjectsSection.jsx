@@ -123,65 +123,65 @@ const projects = [
 ];
 function ProjectCard({ project }) {
     const [isExpanded, setIsExpanded] = useState(false);
-    return (<Card className="bg-white border border-[oklch(0.92_0.06_350)] overflow-hidden hover:shadow-lg transition-shadow">
+    return (<Card className="overflow-hidden hover:shadow-lg transition-shadow">
       <div className="p-6">
         {/* Header */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex-1">
-            <h3 className="font-playfair text-xl font-bold text-[oklch(0.3_0.01_65)] mb-2">
+            <h3 className="font-playfair text-xl font-bold mb-2">
               {project.title}
             </h3>
             <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold ${project.category === 'strategy'
-            ? 'bg-[oklch(0.95_0.06_350)] text-[oklch(0.3_0.01_65)]'
-            : 'bg-[oklch(0.88_0.15_350)] text-white'}`}>
+            ? 'bg-muted text-foreground'
+            : 'bg-primary text-primary-foreground'}`}>
               {project.category === 'strategy' ? 'Planning & Stratégie' : 'Full Marketing Digital'}
             </span>
           </div>
-          <button onClick={() => setIsExpanded(!isExpanded)} className="text-[oklch(0.88_0.15_350)] hover:text-[oklch(0.78_0.20_350)] transition">
+          <button onClick={() => setIsExpanded(!isExpanded)} className="text-primary hover:text-primary/80 transition">
             <ChevronDown className={`w-6 h-6 transition-transform ${isExpanded ? 'rotate-180' : ''}`}/>
           </button>
         </div>
 
         {/* Project Placeholder Image (applies to all projects) */}
-        <div className="photo-placeholder w-full h-75 mb-4 overflow-hidden rounded-md bg-[oklch(0.95_0.06_350)]">
+        <div className="photo-placeholder w-full h-75 mb-4 overflow-hidden rounded-md bg-muted">
           <img src={project.img || PLACEHOLDER_IMAGE} alt={`Visuel du projet ${project.title}`} className="w-full h-full object-contain" loading="lazy"/>
         </div>
 
         {/* Expanded Content */}
-        {isExpanded && (<div className="mt-6 space-y-6 border-t border-[oklch(0.92_0.06_350)] pt-6">
+        {isExpanded && (<div className="mt-6 space-y-6 border-t pt-6">
             {/* Audit */}
             <div>
-              <h4 className="font-playfair text-lg font-bold text-[oklch(0.3_0.01_65)] mb-2">📊 Audit</h4>
-              <p className="text-[oklch(0.5_0.01_65)] text-sm leading-relaxed">{project.audit}</p>
+              <h4 className="font-playfair text-lg font-bold mb-2">📊 Audit</h4>
+              <p className="text-muted-foreground text-sm leading-relaxed">{project.audit}</p>
             </div>
 
             {/* Stratégie */}
             <div>
-              <h4 className="font-playfair text-lg font-bold text-[oklch(0.3_0.01_65)] mb-2">🎯 Stratégie</h4>
-              <p className="text-[oklch(0.5_0.01_65)] text-sm leading-relaxed">{project.strategy}</p>
+              <h4 className="font-playfair text-lg font-bold mb-2">🎯 Stratégie</h4>
+              <p className="text-muted-foreground text-sm leading-relaxed">{project.strategy}</p>
             </div>
 
             {/* Plan d'action */}
             <div>
-              <h4 className="font-playfair text-lg font-bold text-[oklch(0.3_0.01_65)] mb-2">📋 Plan d'Action</h4>
-              <p className="text-[oklch(0.5_0.01_65)] text-sm leading-relaxed">{project.actionPlan}</p>
+              <h4 className="font-playfair text-lg font-bold mb-2">📋 Plan d'Action</h4>
+              <p className="text-muted-foreground text-sm leading-relaxed">{project.actionPlan}</p>
             </div>
 
             {/* Calendrier éditorial */}
             <div>
-              <h4 className="font-playfair text-lg font-bold text-[oklch(0.3_0.01_65)] mb-2">📅 Calendrier Éditorial</h4>
-              <p className="text-[oklch(0.5_0.01_65)] text-sm leading-relaxed">{project.editorialCalendar}</p>
+              <h4 className="font-playfair text-lg font-bold mb-2">📅 Calendrier Éditorial</h4>
+              <p className="text-muted-foreground text-sm leading-relaxed">{project.editorialCalendar}</p>
             </div>
 
             {/* Création (si applicable) */}
             {project.creation && (<div>
-                <h4 className="font-playfair text-lg font-bold text-[oklch(0.3_0.01_65)] mb-2">🎨 Création</h4>
-                <p className="text-[oklch(0.5_0.01_65)] text-sm leading-relaxed">{project.creation}</p>
+                <h4 className="font-playfair text-lg font-bold mb-2">🎨 Création</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed">{project.creation}</p>
               </div>)}
 
             {/* Outils utilisés */}
             <div>
-              <h4 className="font-playfair text-lg font-bold text-[oklch(0.3_0.01_65)] mb-3">🛠️ Outils Utilisés</h4>
+              <h4 className="font-playfair text-lg font-bold mb-3">🛠️ Outils Utilisés</h4>
               <div className="flex flex-wrap gap-2">
                 {project.tools.map((tool) => (<span key={tool} className="skill-badge text-xs">
                     {tool}
@@ -197,18 +197,18 @@ export function ProjectsSection() {
     const fullProjects = projects.filter(p => p.category === 'full');
     return (<section id="projects" className="py-20 md:py-32">
       <div className="container">
-        <h2 className="font-playfair text-4xl md:text-5xl font-bold text-center mb-4 text-[oklch(0.3_0.01_65)]">
+        <h2 className="font-playfair text-4xl md:text-5xl font-bold text-center mb-4">
           Projets Réalisés
         </h2>
-        <p className="text-center text-[oklch(0.5_0.01_65)] mb-12 text-lg max-w-3xl mx-auto">
+        <p className="text-center text-muted-foreground mb-12 text-lg max-w-3xl mx-auto">
           Découvrez mes 10 projets de marketing digital, du planning stratégique à la création de contenu complète. 
           Cliquez sur chaque projet pour voir tous les détails.
         </p>
 
         {/* Projets de Stratégie */}
         <div className="mb-16">
-          <h3 className="font-playfair text-2xl font-bold text-[oklch(0.3_0.01_65)] mb-6 flex items-center gap-3">
-            <span className="inline-block w-3 h-3 rounded-full bg-[oklch(0.95_0.06_350)]"></span>
+          <h3 className="font-playfair text-2xl font-bold mb-6 flex items-center gap-3">
+            <span className="inline-block w-3 h-3 rounded-full bg-muted"></span>
             Planning & Stratégie (4 Projets)
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
@@ -220,8 +220,8 @@ export function ProjectsSection() {
 
         {/* Projets Full Marketing Digital */}
         <div>
-          <h3 className="font-playfair text-2xl font-bold text-[oklch(0.3_0.01_65)] mb-6 flex items-center gap-3">
-            <span className="inline-block w-3 h-3 rounded-full bg-[oklch(0.88_0.15_350)]"></span>
+          <h3 className="font-playfair text-2xl font-bold mb-6 flex items-center gap-3">
+            <span className="inline-block w-3 h-3 rounded-full bg-primary"></span>
             Full Marketing Digital (6 Projets)
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
