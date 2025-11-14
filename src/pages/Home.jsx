@@ -11,7 +11,7 @@ export default function Home() {
         <div className="container flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center shadow-md">
-              <span className="text-white font-bold text-lg font-playfair">FZ</span>
+              <span className="text-white font-bold text-lg font-playfair">FL</span>
             </div>
             <span className="font-playfair text-xl font-bold text-foreground">Fatima Lakrafi</span>
           </div>

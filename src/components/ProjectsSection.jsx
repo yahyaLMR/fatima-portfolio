@@ -137,8 +137,23 @@ function ProjectCard({ project }) {
               {project.category === 'strategy' ? 'Planning & Stratégie' : 'Full Marketing Digital'}
             </span>
           </div>
-          <button onClick={() => setIsExpanded(!isExpanded)} className="text-primary hover:text-primary/80 transition">
+          <button
+            onClick={() => {
+              setIsExpanded(prev => {
+                if (!prev) {
+                  // Scroll only when expanding (was previously collapsed)
+                  requestAnimationFrame(() => {
+                    const scrollAmount = Math.round(document.documentElement.scrollHeight * 0.020);
+                    window.scrollBy({ top: scrollAmount, behavior: 'smooth' });
+                  });
+                }
+                return !prev;
+              });
+            }}
+            className="text-primary hover:text-primary/80 transition"
+          >
             <ChevronDown className={`w-6 h-6 transition-transform ${isExpanded ? 'rotate-180' : ''}`}/>
+          voir les détails
           </button>
         </div>
 
